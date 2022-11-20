@@ -53,6 +53,7 @@ class _DialogModalState extends State<DialogModal> {
                     onChanged: (String? newValue) {
                       setState(() {
                         widget.category = newValue!;
+                        widget.controllers[2].text = widget.category;
                       });
                     },
                     items: <String>["Survival", "Optional", "Extra", "Culture"]
@@ -76,8 +77,8 @@ class _DialogModalState extends State<DialogModal> {
                             lastDate: DateTime(2100),
                           ).then((value) {
                             setState(() {
-                              widget.dateText =
-                                  DateTime.parse(value.toString());
+                              widget.dateText = DateTime.parse(value.toString());
+                              widget.controllers[3].text = value.toString();
                             });
                           });
                         },
