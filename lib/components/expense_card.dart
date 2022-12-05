@@ -45,29 +45,39 @@ class ExpenseCard extends StatelessWidget {
           ],
         ),
         child: Card(
-          child: ListTile(
-            leading: Text(category),
-            title: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(name,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  )),
-            ),
-            subtitle: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Text(
-                      NumberFormat.currency(
-                        locale: 'id_ID',
-                        symbol: 'Rp. ',
-                        decimalDigits: 0,
-                      ).format(price),
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  const Spacer(),
-                  Text(DateFormat('dd MMMM yyyy').format(date)),
-                ],
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: ListTile(
+              leading: Text(category),
+              title: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(name,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      )),
+                ),
+              ),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(left: 5),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Row(
+                    children: [
+                      Text(
+                        NumberFormat.currency(
+                          locale: 'id_ID',
+                          symbol: 'Rp. ',
+                          decimalDigits: 0,
+                        ).format(price),
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      const Spacer(),
+                      Text(DateFormat('dd MMMM yyyy').format(date)),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
