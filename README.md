@@ -21,7 +21,9 @@ These are the items you cannot live without and are the bare minimum for an indi
 These are the expenses that allow you to enjoy your life but are not necessarily required for your survival, such as eating out, shopping, etc.
 
 ### Culture  
+
 These are the purchases that allow you to have cultural experiences in your life. These include expenses such as those made on books, recreation activities like visiting museums, plays, cinema etc.
 
 ### Extra
+
 These include expenses that were necessary but could not have been forecasted in advance. These include expenses such as health emergencies, house repairs etc.
