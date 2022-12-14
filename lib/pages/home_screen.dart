@@ -4,17 +4,16 @@ import 'package:pocket_kakeibo/components/dialog_modal.dart';
 import 'package:pocket_kakeibo/components/expense_card.dart';
 import 'package:pocket_kakeibo/data/database.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   final _localBox = Hive.box('localBox');
   Database db = Database();
-  int _selectedIndex = 0;
 
   @override
   void initState() {
@@ -102,47 +101,13 @@ class _HomePageState extends State<HomePage> {
     db.updateDatabase();
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.orange[200],
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'Pocket Kakeibo',
-            style: TextStyle(
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          elevation: 0,
-        ),
         floatingActionButton: FloatingActionButton(
           onPressed: createNewExpense,
           child: Icon(Icons.add),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.monetization_on),
-              label: 'Income',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.book),
-              label: 'Report',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
         ),
         body: ListView.builder(
           padding: EdgeInsets.only(bottom: 100),

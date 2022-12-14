@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:pocket_kakeibo/pages/home.dart';
+import 'package:pocket_kakeibo/pages/root.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const HomePage(),
+      home: const RootScreen(),
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
