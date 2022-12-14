@@ -20,6 +20,18 @@ class ExpenseCard extends StatelessWidget {
     required this.onDelete,
   });
 
+  String get categoryImage {
+    if (category == 'Survival') {
+      return 'assets/survival.png';
+    } else if (category == 'Optional') {
+      return 'assets/optional.png';
+    } else if (category == 'Extra') {
+      return 'assets/extra.png';
+    } else {
+      return 'assets/culture.png';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -48,7 +60,7 @@ class ExpenseCard extends StatelessWidget {
           child: Align(
             alignment: Alignment.centerRight,
             child: ListTile(
-              leading: Text(category),
+              leading: Image.asset(categoryImage),
               title: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Align(

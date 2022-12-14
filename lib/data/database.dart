@@ -8,12 +8,6 @@ class Database {
   void createInitialData() {
     expense = [
       {
-        'name': 'Rent',
-        'price': 1470000,
-        'category': 'Survival',
-        'date': DateTime.now(),
-      },
-      {
         'name': 'Food',
         'price': 100000,
         'category': 'Survival',
@@ -26,8 +20,20 @@ class Database {
         'date': DateTime.now(),
       },
       {
+        'name': 'Service Motor',
+        'price': 300000,
+        'category': 'Extra',
+        'date': DateTime.now(),
+      },
+      {
         'name': 'Movie Tickets',
         'price': 45000,
+        'category': 'Optional',
+        'date': DateTime.now(),
+      },
+      {
+        'name': 'Online Course',
+        'price': 150000,
         'category': 'Culture',
         'date': DateTime.now(),
       }
