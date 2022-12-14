@@ -44,7 +44,7 @@ class ExpenseCard extends StatelessWidget {
             ),
           ],
         ),
-        child: Card(
+        child: Card( 
           child: Align(
             alignment: Alignment.centerRight,
             child: ListTile(
